@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,11 +21,15 @@ public class LoginTest {
     public void testPageUpdatesToProjectPageAfterLogin() {
         // Arrange
 //        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver();
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless");
+//        WebDriver driver = new ChromeDriver(options);
+
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new FirefoxDriver(options);
+
         driver.get("http://localhost:8080");
 
         // Act
