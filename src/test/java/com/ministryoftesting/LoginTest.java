@@ -42,17 +42,13 @@ public class LoginTest {
         driver.get("http://localhost:8080");
 
         // Act
-        try {
-            Thread.sleep(15000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email")));
 
         driver.findElement(By.name("email")).sendKeys("admin@test.com");
         driver.findElement(By.name("password")).sendKeys("password123");
         driver.findElement(By.cssSelector("button")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".card-title")));
 
         // Assert
