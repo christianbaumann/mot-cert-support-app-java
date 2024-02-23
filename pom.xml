@@ -71,7 +71,7 @@
                 <version>2.22.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/E2E/**.java</exclude>
+                        <exclude>**/LoginTest.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>
