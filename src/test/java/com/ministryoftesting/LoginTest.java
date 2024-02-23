@@ -42,6 +42,12 @@ public class LoginTest {
         driver.get("http://localhost:8080");
 
         // Act
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         driver.findElement(By.name("email")).sendKeys("admin@test.com");
         driver.findElement(By.name("password")).sendKeys("password123");
         driver.findElement(By.cssSelector("button")).click();
