@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,6 +22,8 @@ public class LoginTest {
 //        WebDriverManager.chromedriver().setup();
 //        WebDriver driver = new ChromeDriver();
         WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
         WebDriver driver = new FirefoxDriver();
         driver.get("http://localhost:8080");
 
